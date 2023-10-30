@@ -12,7 +12,7 @@ class UploadFilmForm extends React.Component {
     }
     handleChangeMovieCurrentEp = (event) => {
         this.setState({
-            movieCurrentEp: event.target.value
+            movieCurrentEp: event.target.value.replace(/\D/, '')
         })
     }
     handleChangeMovieTotalEp = (event) => {
@@ -47,20 +47,32 @@ class UploadFilmForm extends React.Component {
         this.formData.append("movieTitle", this.state.movieTitle);
         this.formData.append("movieCurrentEp", this.state.movieCurrentEp);
         this.formData.append("movieTotalEp", this.state.movieTotalEp);
+        this.formData.append("movieDescription", this.state.movieDescription);
+        this.formData.append("movieYear", this.state.movieYear);
+        this.formData.append("movieRating", this.state.movieRating);
+        this.formData.append("movieM3U8", this.state.movieM3U8);
+        this.formData.append("genre", this.state.genre);
         this.formData.append("filemp4", this.filemp4);
         this.formData.append("fileJpg", this.fileJpg);
         axios({
             method: 'post',
             url: 'http://localhost:5000/film/upload',
             data: this.formData
-        }).catch(error => console.log(error));
+        })
+        .then(res=> {console.log(res)})
+        .catch(error => console.log(error));
         console.log(this.formData)
 
     }
     state = {
         movieTitle: "",
-        movieCurrentEp: null,
-        movieTotalEp: null,
+        movieCurrentEp: Number,
+        movieTotalEp: Number,
+        movieDescription: "",
+        movieYear: "",
+        movieRating: "",
+        movieM3U8: "",
+        genre: "hanh dong",
         files: [],
     }
 
