@@ -4,17 +4,10 @@ import '../styles/CustomNav.scss'
 const CustomNav = ({ li }) => {
     const [window, setWindow] = useState(false);
 
-    let openClose = () => {
-        if (window === false) {
-            setWindow(true);
-        } else {
-            setWindow(false);
-        }
-    };
+    
     return (
-        <nav className="navbar-menu" style={{ width: window === false ? 250 : 60 }}>
-            <div className="burger" onClick={() => openClose()}>
-                
+        <nav className="navbar-menu">
+            <div>
             </div>
             <ul className="navbar__list">
                 {li.map((item, i) => (
