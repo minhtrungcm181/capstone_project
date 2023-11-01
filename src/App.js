@@ -1,18 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
-import MainPage from './views/MainPage';
-import UploadFilmForm from './components/UploadFilmForm';
-
+import { ColorModeContext, useMode } from "./theme";
+import { CssBaseline, ThemeProvider } from "@mui/material";
+import Topbar from "./views/global/Topbar";
+import Sidebar from "./views/global/Sidebar";
 
 function App() {
+  const [theme, colorMode] = useMode()
 
   return (
-    <nav className="App">
-      <header className="App-header">
-        <MainPage/>
-        <UploadFilmForm />
-      </header>
-    </nav>
+    <ColorModeContext.Provider value={colorMode}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <div className='app'>
+          <main className="content">
+            <Topbar />
+            {/* <Routes>
+              <Route></Route>
+              <Route></Route>
+              <Route></Route>
+              <Route></Route>
+            </Routes> */}
+          </main>
+        </div>
+      </ThemeProvider>
+    </ColorModeContext.Provider>
   );
 }
 
