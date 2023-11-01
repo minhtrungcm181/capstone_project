@@ -1,5 +1,6 @@
 import axios from "axios";
-import React from "react"
+import React from "react";
+import '../styles/UploadFilmForm.scss';
 class UploadFilmForm extends React.Component {
     filemp4 = null;
     fileJpg = null;
@@ -79,44 +80,48 @@ class UploadFilmForm extends React.Component {
     render() {
         return (
             <>
-                <form action="">
-                    <label for="movie name">Movie name:</label>
+                <form action="" className="form">
+                    <label for="movie name" className="label">Movie name:</label>
                     <input type="text"
                         id="movie title"
-                        name="movieTitle"
+                        className="movieTitle"
                         value={this.movieTitle}
                         onChange={(event) => this.handleChangeMovieTitle(event)}
                     />
-                    <label for="movie current ep">Movie Current Ep:</label>
+                    <br></br>
+                    <label for="movie current ep" className="label">Movie Current Ep:</label>
                     <input type="number"
                         id="movie current ep"
-                        name="movieCurrentEp"
+                        className="movieCurrentEp"
                         value={this.movieCurrentEp}
                         onChange={(event) => this.handleChangeMovieCurrentEp(event)}
                     />
-                    <label for="movie total ep">Movie Total Ep:</label>
+                   
+                    <label for="movie total ep" className="label">Movie Total Ep:</label>
                     <input type="number"
                         id="movie total ep"
-                        name="movieTotalEp"
+                        className="movieTotalEp"
                         value={this.movieTotalEp}
                         onChange={(event) => this.handleChangeMovieTotalEp(event)}
                     />
+                    <br></br>
 
-                    <label for="Source Film">Source Film:</label>
+                    <label for="Source Film" className="label">Source Film:</label>
                     <input type="file"
                         id="source film"
-                        name="filemp4"
+                        className="filemp4"
                         value={this.files}
-                        onChange={(event) => this.handleChangeFileSubmit(event)}
+                        onClick={(event) => this.handleChangeFileSubmit(event)}
                     />
 
-                    <label for="Source Jpg">Source Jpg:</label>
+                    <label for="Source Jpg" className="label">Source Jpg:</label>
                     <input type="file"
                         id="source film"
-                        name="filejpg"
+                        className="filejpg"
                         value={this.files}
-                        onChange={(event) => this.handleChangeFileSubmit(event)}
+                        onClick={(event) => this.handleChangeFileSubmit(event)}
                     />
+                    <br></br>
                     <input type="button" value="upload"
                         onClick={(event) => this.handleSubmit(event)}
                     />
