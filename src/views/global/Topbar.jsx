@@ -1,4 +1,4 @@
-import {Box, IconButton, useTheme} from "@mui/material"
+import {Box, IconButton, useTheme, Typography} from "@mui/material"
 import { useContext } from "react";
 import { ColorModeContext, tokens } from "../../theme";
 import InputBase from '@mui/material/InputBase';
@@ -16,17 +16,15 @@ const Topbar = () => {
 
     return (
         <Box display="flex" justifyContent="space-between" p={2}>
-            <Box
-            display="flex"
-            backgroundColor = {colors.primary[400]}
-            borderRadius="3px"
+           
+            <Typography
+                variant="h2"
+                color={colors.grey[100]}
+                fontWeight="bold"
+                sx={{ m: "0 0 5px 0" }}
             >
-                <InputBase sx = {{ml:2, flex: 1}} placeholder = "Movie Search"></InputBase>
-                <IconButton type = "button">
-                    <SearchIcon/>
-                </IconButton>
-            </Box>
-
+                Hotel Media & Device Manager
+            </Typography>
             <Box display="flex">
                 <IconButton onClick={colorMode.toggleColorMode}>
                     <LightModeOutlinedIcon/>

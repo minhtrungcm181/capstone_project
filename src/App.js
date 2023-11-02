@@ -20,7 +20,6 @@ function App() {
             <Routes>
               <Route path ="/moviemanage" element={<MovieManage/>}/>
               {/* <Route path ="" element=""/>
-              <Route path ="" element=""/>
               <Route path ="" element=""/> */}
             </Routes>
           </main>
