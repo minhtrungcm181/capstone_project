@@ -5,6 +5,7 @@ import Sidebar from "./views/global/Sidebar";
 import { Routes, Route } from "react-router-dom";
 import MovieManage from "./views/moviemanage/MovieManage";
 import { useState } from "react";
+import UploadFilmForm from "./components/UploadFilmForm";
 function App() {
   const [theme, colorMode] = useMode()
   const [isSidebar, setIsSidebar] = useState(true);
@@ -19,6 +20,7 @@ function App() {
             <Topbar setIsSidebar={setIsSidebar} />
             <Routes>
               <Route path ="/moviemanage" element={<MovieManage/>}/>
+              <Route path = "/moviemanage/addmovieform" element={<UploadFilmForm/>}/>
               {/* <Route path ="" element=""/>
               <Route path ="" element=""/> */}
             </Routes>

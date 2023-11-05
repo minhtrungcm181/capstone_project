@@ -16,7 +16,7 @@ const MovieManage =() =>  {
 
     
         return (
-            <Box display="flex" justifyContent="space-between;" p={2}>
+            <Box display="flex" justifyContent="space-between" p={2}>
                 <Box
                     width = {500}
                     display="flex"
