@@ -13,21 +13,26 @@ const UploadFilmForm = () => {
     const fileJpg = null;
     let formData = new FormData();
 
-    const handleChangeMovieTitle = (event) => {
-        this.setState({
-            movieTitle: event.target.value
-        })
-    }
-    const handleChangeMovieCurrentEp = (event) => {
-        this.setState({
-            movieCurrentEp: event.target.value.replace(/\D/, '')
-        })
-    }
-    const handleChangeMovieTotalEp = (event) => {
-        this.setState({
-            movieTotalEp: event.target.value
-        })
-    }
+    // const handleChangeMovieTitle = (event) => {
+    //     this.setState({
+    //         movieTitle: event.target.value
+    //     })
+    // }
+    // const handleChangeMovieCurrentEp = (event) => {
+    //     this.setState({
+    //         movieCurrentEp: event.target.value.replace(/\D/, '')
+    //     })
+
+
+
+    // }
+    // const handleChangeMovieTotalEp = (event) => {
+
+    //     this.setState({
+    //         movieTotalEp: event.target.value
+    //     })
+
+    // }
     // handleChangeMovieSource = (event) => {
     //     const filemp4 = event.target.files[0]
     //     this.setState({
@@ -62,6 +67,7 @@ const UploadFilmForm = () => {
         this.formData.append("genre", this.state.genre);
         this.formData.append("filemp4", this.filemp4);
         this.formData.append("fileJpg", this.fileJpg);
+
         axios({
             method: 'post',
             url: 'http://localhost:5000/film/upload',
@@ -152,24 +158,27 @@ const UploadFilmForm = () => {
                         id="movie title"
                         label="Title"
                         variant="filled"
-                        value={state.movieTitle}
-                        onChange={(event) => this.handleChangeMovieTitle(event)} />
+
+                    // onChange={(event) => handleChangeMovieTitle(event)} 
+                    />
 
                     <TextField
                         sx={{ m: 1, width: '45ch' }}
                         id="movie current ep"
                         label="Current Ep"
                         variant="filled"
-                        value={state.movieCurrentEp}
-                        onChange={(event) => this.handleChangeMovieCurrentEp(event)} />
+                    // value={this.state.movieCurrentEp}
+                    // onChange={(event) => handleChangeMovieCurrentEp(event)} 
+                    />
 
                     <TextField
                         sx={{ m: 1, width: '43ch' }}
                         id="movie current ep"
                         label="Total Ep"
                         variant="filled"
-                        value={state.movieTotalEp}
-                        onChange={(event) => this.handleChangeMovieTotalEp(event)} />
+                    // value={this.state.movieTotalEp}
+                    // onChange={(event) => handleChangeMovieTotalEp(event)} 
+                    />
                 </div>
             </FormControl>
 
@@ -181,8 +190,8 @@ const UploadFilmForm = () => {
                     id="movie source"
                     sx={{ m: 9, width: '40ch' }}
                     type="File"
-                    value={state.files}
-                    onSubmit={(event) => this.handleChangeFileSubmit(event)}
+                // value={this.state.files}
+                // onSubmit={(event) => handleChangeFileSubmit(event)}
                 />
             </FormControl>
 
@@ -194,8 +203,8 @@ const UploadFilmForm = () => {
                     sx={{ m: 9, width: '43ch' }}
                     label="Movie Thumbnail"
                     type="File"
-                    value={state.files}
-                    onSubmit={(event) => this.handleChangeFileSubmit(event)}
+                // value={this.state.files}
+                // onSubmit={(event) => handleChangeFileSubmit(event)}
                 />
 
             </FormControl>
