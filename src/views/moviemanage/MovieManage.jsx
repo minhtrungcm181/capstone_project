@@ -30,7 +30,7 @@ const MovieManage =() =>  {
                 </Box>
                 <Box >
                     <Routes>
-                        <Route path="moviemanage/addmovieform" element={<UploadFilmForm/>} />
+                        <Route path="moviemanage/addmovieform" Component ={<UploadFilmForm/>} />
                         </Routes>
                     <Button
                         href= "moviemanage/addmovieform"
